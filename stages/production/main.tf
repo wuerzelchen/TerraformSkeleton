@@ -7,7 +7,8 @@ locals {
 }
 
 module "resource_group" {
-  source = "../../modules/rg"
+  #it is better to have a separate repository for just your modules, for this showcase, I have it in the current repo
+  source = "github.com/wuerzelchen/TerraformSkeleton//modules/rg?ref=v0.1"
 
   rg_name = local.rg_name
   location = [

@@ -7,7 +7,7 @@ locals {
 }
 
 module "resource_group" {
-  source = "../../modules/rg"
+  source = "github.com/wuerzelchen/TerraformSkeleton//modules/rg?ref=v0.1"
 
   rg_name = local.rg_name
   location = [

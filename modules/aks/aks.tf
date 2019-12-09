@@ -1,4 +1,4 @@
-resource "azurerm_kubernetes_cluster" "test" {
+resource "azurerm_kubernetes_cluster" "aks" {
   for_each = toset(var.location)
   name                = "${var.cluster_name}-${replace(each.value, " ", "")}"
   location            = each.value
@@ -7,7 +7,7 @@ resource "azurerm_kubernetes_cluster" "test" {
 
   agent_pool_profile {
     name            = "default"
-    count           = 1
+    count           = var.node_count
     vm_size         = "Standard_D1_v2"
     os_type         = "Linux"
     os_disk_size_gb = 30

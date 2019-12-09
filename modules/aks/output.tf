@@ -1,8 +1,8 @@
 
-output "client_certificate" {
-  value = "${azurerm_kubernetes_cluster.test.kube_config.0.client_certificate}"
+output "aks_all" {
+  value = "${azurerm_kubernetes_cluster.aks}"
 }
 
 output "kube_config" {
-  value = "${azurerm_kubernetes_cluster.test.kube_config_raw}"
+  value = values(azurerm_kubernetes_cluster.aks)[*].kube_config_raw
 }

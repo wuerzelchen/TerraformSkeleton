@@ -27,3 +27,8 @@ variable "cluster_dns_prefix" {
     description = "DNS Prefix of the Master API"
     type = string
 }
+
+variable "node_count" {
+    description = "Count of worker nodes in the cluster"
+    type= number
+}
